@@ -30,7 +30,7 @@ export type Problem = {
       notes: String.raw`Key idea: set $u=\sqrt[3]{1+\sqrt{1-x^3}}$, $v=\sqrt[3]{1-\sqrt{1-x^3}}$. Then $uv=x$ and $y=u+v$ satisfies $y^3-3xy-2=0$. Substitute $x=\frac{y^3-2}{3y}$ to change variables $x\to y$.`,
 
 
-      videoUrl: "https://youtu.be/q-H0t_Rxch8",
+      videoUrl: "https://youtu.be/BLMiyCiED7w",
       tags: ["algebra", "substitution", "radicals", "cubic", "cardano"],
 
     },
