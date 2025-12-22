@@ -6,6 +6,11 @@ import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
+export async function generateStaticParams() {
+  return problems.map((p) => ({ slug: p.slug }));
+}
+
+
 export default async function ProblemPage({
   params,
 }: {
