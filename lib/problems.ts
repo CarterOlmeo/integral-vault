@@ -28,8 +28,6 @@ export type Problem = {
       originalUrl: "https://drive.google.com/file/d/1stn9BxJtIVhPOkqSNR3GxAzr5K67dlOI/view?usp=drivesdk",
       promptLatex: String.raw`\int_{-1/3}^{1}\left(\sqrt[3]{1+\sqrt{1-x^{3}}}+\sqrt[3]{1-\sqrt{1-x^{3}}}\right)\,dx`,
       notes: String.raw`Key idea: set $u=\sqrt[3]{1+\sqrt{1-x^3}}$, $v=\sqrt[3]{1-\sqrt{1-x^3}}$. Then $uv=x$ and $y=u+v$ satisfies $y^3-3xy-2=0$. Substitute $x=\frac{y^3-2}{3y}$ to change variables $x\to y$.`,
-
-
       videoUrl: "https://youtu.be/BLMiyCiED7w",
       tags: ["algebra", "substitution", "radicals", "cubic", "cardano"],
 
@@ -127,5 +125,101 @@ Evaluate:
   tags: ["substitution", "radicals", "definite integral"]
 },
 
+{
+    slug: "2025-12-23-easy-integral",
+    date: "2025-12-23",
+    title: "Easy Integral 23/12/25",
+    originalUrl: "https://dailyintegral.com",
+    promptLatex: String.raw`\int_{0}^{\pi/12}(\tan x+\cot x)\sin(2x)\cos(3x)\,dx`,
+    notes: String.raw`Key idea: use \(\tan x+\cot x=\frac{1}{\sin x\cos x}=\frac{2}{\sin(2x)}\), so the integrand collapses to \(2\cos(3x)\). Result: \(\displaystyle \frac{\sqrt2}{3}\).`,
+    videoUrl: "",
+    tags: ["trig", "identity", "simplification"],
+  },
+  {
+    slug: "2025-12-23-medium-integral",
+    date: "2025-12-23",
+    title: "Medium Integral 23/12/25",
+    originalUrl: "https://dailyintegral.com",
+    promptLatex: String.raw`\int_{0}^{\pi/2}\frac{\sin^{3}x\,\cos^{5}x}{\left(1-\frac12\sin^{2}x\right)^{3}}\,dx`,
+    notes: String.raw`Key idea: rewrite \(\sin^3x\cos^5x=(\sin^2x)(\sin x\cos x)(\cos^4x)\), set \(u=\sin^2x\) to get a rational integral, then a linear change \(t=1-\frac{u}{2}\) and partial fractions. Result: \(\displaystyle 16\ln 2-11\).`,
+    videoUrl: "",
+    tags: ["trig", "substitution", "rational", "logarithms"],
+  },
+  {
+    slug: "2025-12-23-hard-integral",
+    date: "2025-12-23",
+    title: "Hard Integral 23/12/25",
+    originalUrl: "https://dailyintegral.com",
+    promptLatex: String.raw`\int_{-\infty}^{\infty}\frac{e^{-x^{2}}}{1+x^{2}}\,dx`,
+    notes: String.raw`Key idea: represent \(\frac{1}{1+x^2}=\int_0^\infty e^{-t}\cos(tx)\,dt\), swap integrals, and use the Gaussian Fourier transform \(\int_{-\infty}^{\infty}e^{-x^2}\cos(tx)\,dx=\sqrt\pi\,e^{-t^2/4}\). Result: \(\displaystyle \pi e\,\operatorname{erfc}(1)=\pi e(1-\operatorname{erf}(1))\).`,
+    videoUrl: "",
+    tags: ["gaussian", "fourier", "parameter-integral", "error-function"],
+  },
+
+  // Medium / Hard — 17/09/25
+  {
+    slug: "2025-09-17-medium-integral",
+    date: "2025-09-17",
+    title: "Medium Integral 17/09/25",
+    originalUrl: "https://dailyintegral.com",
+    promptLatex: String.raw`\int_{0}^{1}\frac{x}{x^{2}+2x+2}\,dx`,
+    notes: String.raw`Key idea: rewrite \(x=\tfrac12(2x+2)-1\) to split into a \(\ln(\text{quadratic})\) part plus an \(\arctan\) part after completing the square \(x^2+2x+2=(x+1)^2+1\). Result: \(\displaystyle \frac12\ln\!\left(\frac52\right)-\arctan(2)+\frac{\pi}{4}\).`,
+    videoUrl: "",
+    tags: ["algebra", "complete-the-square", "logarithms", "arctan"],
+  },
+  {
+    slug: "2025-09-17-hard-integral",
+    date: "2025-09-17",
+    title: "Hard Integral 17/09/25",
+    originalUrl: "https://dailyintegral.com",
+    promptLatex: String.raw`\int_{0}^{1}\frac{x^{2}+1}{x^{4}+x^{2}+1}\,dx`,
+    notes: String.raw`Key idea: factor \(x^4+x^2+1=(x^2+x+1)(x^2-x+1)\), then use the symmetric split \(\frac{x^2+1}{(x^2+x+1)(x^2-x+1)}=\frac12\!\left(\frac{1}{x^2+x+1}+\frac{1}{x^2-x+1}\right)\) and integrate via \(\arctan\) after completing squares. Result: \(\displaystyle \frac{\pi}{2\sqrt3}\).`,
+    videoUrl: "",
+    tags: ["factorisation", "partial-fractions", "arctan"],
+  },
+
+  // Easy / Medium / Hard — 18/09/25
+  {
+    slug: "2025-09-18-easy-integral",
+    date: "2025-09-18",
+    title: "Easy Integral 18/09/25",
+    originalUrl: "https://dailyintegral.com",
+    promptLatex: String.raw`\int_{0}^{\pi/3}\cos^{2}(2x)\,dx`,
+    notes: String.raw`Key idea: power-reduction \(\cos^2\theta=\frac{1+\cos(2\theta)}{2}\) with \(\theta=2x\). Result: \(\displaystyle \frac{\pi}{6}-\frac{\sqrt3}{16}\).`,
+    videoUrl: "",
+    tags: ["trig", "identity", "power-reduction"],
+  },
+  {
+    slug: "2025-09-18-medium-integral",
+    date: "2025-09-18",
+    title: "Medium Integral 18/09/25",
+    originalUrl: "https://dailyintegral.com",
+    promptLatex: String.raw`\int_{\pi/6}^{\pi/3} x\cos(2x)\,dx`,
+    notes: String.raw`Key idea: integration by parts with \(u=x\), \(dv=\cos(2x)\,dx\) (so \(v=\tfrac12\sin(2x)\)), then evaluate endpoints. Result: \(\displaystyle \frac{\pi\sqrt3}{24}-\frac14\).`,
+    videoUrl: "",
+    tags: ["integration-by-parts", "trig"],
+  },
+  {
+    slug: "2025-09-18-hard-integral",
+    date: "2025-09-18",
+    title: "Hard Integral 18/09/25",
+    originalUrl: "https://dailyintegral.com",
+    promptLatex: String.raw`\int_{0}^{\pi/3}\frac{1-\cos x}{2+\sin x+\cos x}\,dx`,
+    notes: String.raw`Key idea: use the Weierstrass substitution \(t=\tan\frac{x}{2}\) to make \(\sin x,\cos x,dx\) rational in \(t\), then partial fractions. Result: \(\displaystyle \frac12\ln\!\left(\frac{6}{5+\sqrt3}\right)-\frac{\pi}{6}+2\sqrt2\,\arctan\!\left(\frac{\sqrt2}{3\sqrt3+1}\right)\).`,
+    videoUrl: "",
+    tags: ["weierstrass", "tan-half-angle", "partial-fractions", "logarithms", "arctan"],
+  },
+
+  // Easy — 19/09/25
+  {
+    slug: "2025-09-19-easy-integral",
+    date: "2025-09-19",
+    title: "Easy Integral 19/09/25",
+    originalUrl: "https://dailyintegral.com",
+    promptLatex: String.raw`\int_{0}^{\pi/6}\sin^{2}(2x)\,dx`,
+    notes: String.raw`Key idea: power-reduction \(\sin^2\theta=\frac{1-\cos(2\theta)}{2}\) with \(\theta=2x\). Result: \(\displaystyle \frac{\pi}{12}-\frac{\sqrt3}{16}\).`,
+    videoUrl: "",
+    tags: ["trig", "identity", "power-reduction"],
+  },
   ];
   
