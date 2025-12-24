@@ -258,9 +258,9 @@ Hence $I=\frac{\pi}{2}-\frac{\pi}{2}(1-e^{-1})=\frac{\pi}{2e}$. Result: $\frac{\
 },
 
 {
-  slug: "2025-09-18-medium-integral",
-  date: "2025-09-18",
-  title: "Medium Integral 18/09/25",
+  slug: "2025-09-19-medium-integral",
+  date: "2025-09-19",
+  title: "Medium Integral 19/09/25",
   originalUrl: "https://dailyintegral.com",
   promptLatex: String.raw`\int_{0}^{\ln 3}\frac{e^x}{e^{2x}+e^x+1}\,dx`,
   notes: String.raw`Key idea: substitute $t=e^x$ so $dt=e^x\,dx$ and the bounds $x:0\to\ln3$ become $t:1\to3$. Then
@@ -278,9 +278,9 @@ Result: $\frac{2}{\sqrt3}\arctan\!\big(\frac{1}{2\sqrt3}\big)$.`,
   tags: ["substitution", "arctan", "complete-square"],
 },
 {
-  slug: "2025-09-18-hard-integral",
-  date: "2025-09-18",
-  title: "Hard Integral 18/09/25",
+  slug: "2025-09-19-hard-integral",
+  date: "2025-09-19",
+  title: "Hard Integral 19/09/25",
   originalUrl: "https://dailyintegral.com",
   promptLatex: String.raw`\int_{0}^{1}\frac{x^4+1}{x^4+x^2+1}\,dx`,
   notes: String.raw`Key idea: write $\frac{x^4+1}{x^4+x^2+1}=1-\frac{x^2}{x^4+x^2+1}$, so
