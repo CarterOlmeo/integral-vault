@@ -221,5 +221,91 @@ Evaluate:
     videoUrl: "",
     tags: ["trig", "identity", "power-reduction"],
   },
+
+  {
+  slug: "2025-12-24-easy-integral",
+  date: "2025-12-24",
+  title: "Easy Integral 24/12/25",
+  originalUrl: "https://dailyintegral.com",
+  promptLatex: String.raw`\int_{0}^{\pi/4}\frac{\cos(2x)}{\cos x-\sin x}\,dx`,
+  notes: String.raw`Key idea: use $\cos(2x)=\cos^2x-\sin^2x=(\cos x-\sin x)(\cos x+\sin x)$, so the fraction simplifies to $\cos x+\sin x$. Then $\int_0^{\pi/4}(\cos x+\sin x)\,dx=[\sin x-\cos x]_0^{\pi/4}=1$. Result: $1$.`,
+  videoUrl: "",
+  tags: ["trig", "identity", "cancellation"],
+},
+{
+  slug: "2025-12-24-medium-integral",
+  date: "2025-12-24",
+  title: "Medium Integral 24/12/25",
+  originalUrl: "https://dailyintegral.com",
+  promptLatex: String.raw`\int_{0}^{\pi/2}\frac{\sin^2 x+\sec x}{1+\tan x}\,dx`,
+  notes: String.raw`Key idea: rewrite $\frac{\sin^2x+\sec x}{1+\tan x}=\frac{\cos x\sin^2x+1}{\sin x+\cos x}$, then apply the symmetry $x\mapsto \frac{\pi}{2}-x$ and average the two forms to get $I=\frac12\int_0^{\pi/2}\sin x\cos x\,dx+\int_0^{\pi/2}\frac{dx}{\sin x+\cos x}$. Now $\int_0^{\pi/2}\sin x\cos x\,dx=\frac12$, and $\sin x+\cos x=\sqrt2\sin(x+\frac{\pi}{4})$ gives $\int_0^{\pi/2}\frac{dx}{\sin x+\cos x}=\sqrt2\ln(1+\sqrt2)$. Result: $\frac14+\sqrt2\ln(1+\sqrt2)$.`,
+  videoUrl: "",
+  tags: ["symmetry", "trig", "log", "csc-integral"],
+},
+{
+  slug: "2025-12-24-hard-integral",
+  date: "2025-12-24",
+  title: "Hard Integral 24/12/25",
+  originalUrl: "https://dailyintegral.com",
+  promptLatex: String.raw`\int_{0}^{\infty}\frac{1-\cos x}{x^{2}}\cdot\frac{1}{1+x^{2}}\,dx`,
+  notes: String.raw`Key idea: split $\frac{1}{x^2(1+x^2)}=\frac{1}{x^2}-\frac{1}{1+x^2}$. Then
+$I=\int_0^\infty\frac{1-\cos x}{x^2}\,dx-\int_0^\infty\frac{1-\cos x}{1+x^2}\,dx$.
+For the first, integrate by parts: $\int_0^\infty\frac{1-\cos x}{x^2}\,dx=\int_0^\infty\frac{\sin x}{x}\,dx=\frac{\pi}{2}$.
+For the second, $\int_0^\infty\frac{1}{1+x^2}\,dx=\frac{\pi}{2}$ and the standard cosine-transform $\int_0^\infty\frac{\cos x}{1+x^2}\,dx=\frac{\pi}{2}e^{-1}$, so it equals $\frac{\pi}{2}(1-e^{-1})$.
+Hence $I=\frac{\pi}{2}-\frac{\pi}{2}(1-e^{-1})=\frac{\pi}{2e}$. Result: $\frac{\pi}{2e}$.`,
+  videoUrl: "",
+  tags: ["improper-integral", "partial-fractions", "integration-by-parts", "fourier-transform"],
+},
+
+{
+  slug: "2025-09-18-medium-integral",
+  date: "2025-09-18",
+  title: "Medium Integral 18/09/25",
+  originalUrl: "https://dailyintegral.com",
+  promptLatex: String.raw`\int_{0}^{\ln 3}\frac{e^x}{e^{2x}+e^x+1}\,dx`,
+  notes: String.raw`Key idea: substitute $t=e^x$ so $dt=e^x\,dx$ and the bounds $x:0\to\ln3$ become $t:1\to3$. Then
+\[
+I=\int_{1}^{3}\frac{1}{t^2+t+1}\,dt
+=\int_{1}^{3}\frac{1}{(t+\tfrac12)^2+(\tfrac{\sqrt3}{2})^2}\,dt
+=\frac{2}{\sqrt3}\Big[\arctan\!\Big(\frac{2t+1}{\sqrt3}\Big)\Big]_{1}^{3}.
+\]
+This equals $\frac{2}{\sqrt3}\big(\arctan(\tfrac{7}{\sqrt3})-\arctan(\sqrt3)\big)$, and using $\arctan a-\arctan b=\arctan\!\big(\frac{a-b}{1+ab}\big)$ (valid here since both angles are in $(0,\pi/2)$) gives
+\[
+I=\frac{2}{\sqrt3}\arctan\!\Big(\frac{1}{2\sqrt3}\Big).
+\]
+Result: $\frac{2}{\sqrt3}\arctan\!\big(\frac{1}{2\sqrt3}\big)$.`,
+  videoUrl: "",
+  tags: ["substitution", "arctan", "complete-square"],
+},
+{
+  slug: "2025-09-18-hard-integral",
+  date: "2025-09-18",
+  title: "Hard Integral 18/09/25",
+  originalUrl: "https://dailyintegral.com",
+  promptLatex: String.raw`\int_{0}^{1}\frac{x^4+1}{x^4+x^2+1}\,dx`,
+  notes: String.raw`Key idea: write $\frac{x^4+1}{x^4+x^2+1}=1-\frac{x^2}{x^4+x^2+1}$, so
+\[
+I=1-\int_0^1\frac{x^2}{x^4+x^2+1}\,dx.
+\]
+Factor $x^4+x^2+1=(x^2+x+1)(x^2-x+1)$ and use the clean split
+\[
+\frac{x^2}{(x^2+x+1)(x^2-x+1)}
+=\frac12\left(\frac{x}{x^2-x+1}-\frac{x}{x^2+x+1}\right).
+\]
+Each term integrates by “derivative + leftover constant”: for example,
+$x=\tfrac12(2x-1)+\tfrac12$ over $x^2-x+1$, giving a $\ln$ part plus an $\arctan$ part after completing the square.
+Carrying this out from $0$ to $1$ gives
+\[
+\int_0^1\frac{x^2}{x^4+x^2+1}\,dx=-\frac14\ln 3+\frac{\pi}{4\sqrt3}.
+\]
+Hence
+\[
+I=1+\frac{\ln 3}{4}-\frac{\pi}{4\sqrt3}.
+\]
+Result: $1+\frac{\ln 3}{4}-\frac{\pi}{4\sqrt3}$.`,
+  videoUrl: "",
+  tags: ["factorisation", "partial-fractions", "log", "arctan"],
+},
+
   ];
   
